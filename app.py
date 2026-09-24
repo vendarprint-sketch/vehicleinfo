@@ -27,8 +27,8 @@ HEADERS = {
     ),
 }
 
-# --- IPRoyal SOCKS5 PROXY CONFIGURATION ---
-PROXY_URL = "socks5h://QAF011bD6k0KrTcs:sndOTtxLhyDnvHx9_country-in@geo.iproyal.com:12321"
+# --- IPRoyal HTTP PROXY CONFIGURATION (Fixed for Vercel) ---
+PROXY_URL = "http://QAF011bD6k0KrTcs:sndOTtxLhyDnvHx9_country-in@geo.iproyal.com:12321"
 
 PROXIES = {
     "http": PROXY_URL,
@@ -239,6 +239,5 @@ def health():
         "uptime_s": int(time.time() - _boot),
     })
 
-# Vercel requires the app variable to be exposed directly, which we have done above.
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=7890, threaded=True)
